@@ -1,5 +1,326 @@
-<center>
-<img src="new.png" width="100%"/>
-<br/>
-<img src="ceu_codecamp.jpg"/>
-</center>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Your Name - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    position: relative;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #feb47b;
+}
+
+section {
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#about {
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay for better readability */
+    padding: 120px 30px;
+    border-radius: 10px;
+    max-width: 1000px;
+    margin: 80px auto; /* Centering with margin */
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+#about h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #feb47b;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 20px 0;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    text-align: justify;
+    max-width: 800px;
+    margin: 20px auto;
+    color: #fff;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    margin-top: 20px;
+    transition: transform 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.1);
+}
+
+.project-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.project {
+    background: white;
+    padding: 20px;
+    width: 280px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    position: relative;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.project h3 {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #000;
+}
+
+.project p {
+    font-size: 1rem;
+    margin-top: 10px;
+    color: #000;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.project:hover img {
+    transform: scale(1.05);
+}
+
+.project a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #feb47b;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.project a:hover {
+    background-color: #ff7e5f;
+}
+
+form {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: #333;
+    background: #fff;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form textarea:focus {
+    border-color: #feb47b;
+    outline: none;
+}
+
+form button {
+    padding: 15px 30px;
+    background-color: #feb47b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #ff7e5f;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 0.9rem;
+    margin-top: 40px;
+}
+
+footer p {
+    margin: 0;
+}
+
+
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Christian Robles Ignacio</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <img src="profile.jpg" alt="Your Picture" class="profile-img">
+        <p>Hi, I'm Christian Robles Ignacio, and I'm currently a student at Bulacan State University Bustos Campus pursuing a Bachelor of Science in Information Technology. With a deep passion for technology and problem-solving, I have always been intrigued by the endless possibilities that computing can offer. </p>
+
+            <p>Growing up, I was fascinated by how software and technology could be used to create meaningful solutions to everyday challenges. This curiosity led me to choose Information Technology as my field of study, where I could harness the power of programming, system design, and data management to solve real-world problems. </p>
+            
+            <p>During my time at university, I've developed a strong foundation in programming languages such as Java, C++, and JavaScript. I've gained hands-on experience in developing applications with these languages, which has allowed me to apply theoretical knowledge to real-world projects. In addition to programming, I also have a solid background in website creation, having worked on several projects that involve both frontend and backend development. I am also knowledgeable in database management, which enables me to build and manage efficient data structures for my applications. These skills have allowed me to bridge the gap between theory and practice, equipping me with the tools to solve complex problems in the field of Information Technology.</p>
+            
+            <p>What excites me most about IT is the ever-evolving nature of the field. I am particularly interested in machine learning, artificial intelligence, and cybersecurity, and I am eager to learn how these technologies can be used to innovate and improve industries ranging from healthcare to entertainment. I actively seek out opportunities to explore these areas through side projects, online courses, and collaborations with fellow students.</p>
+            
+            <p>Looking forward, my goal is to continue growing as an IT professional, learning new technologies, and contributing to innovative solutions that can make a positive impact in the world. If you'd like to explore some of my work or get in touch, feel free to browse through my projects below or reach out to me directly!</p>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="project-container">
+            <div class="project">
+                <img src="project1.jpg" alt="Project 1">
+                <h3>Gym Management System</h3>
+                <p>A system that handles information about the membership and non-membership</p>
+                <a href="https://project-link.com" target="_blank">View Project</a>
+            </div>
+            <div class="project">
+                <img src="project2.jpg" alt="Project 2">
+                <h3>Coffee Website Management System</h3>
+                <p>A website system that allow's customer to buy online and can do POS and Inventory System</p>
+                <a href="https://project-link.com" target="_blank">View Project</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <form action="submit_form.php" method="POST">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
